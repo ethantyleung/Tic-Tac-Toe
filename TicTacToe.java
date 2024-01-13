@@ -5,8 +5,8 @@ import java.util.*;
 
 public class TicTacToe {
 
-    private final int BORDER_WIDTH = 600;
-    private final int BORDER_HEIGHT = 670;
+    final int BORDER_WIDTH = 600;
+    final int BORDER_HEIGHT = 670;
 
     JFrame mainFrame = new JFrame("Tic-Tac-Toe Game");
     JLabel titleLabel = new JLabel();
@@ -105,9 +105,6 @@ public class TicTacToe {
                 }
             }
         });
-
-
-
     }
 
     void checkForWinner() {
@@ -162,8 +159,8 @@ public class TicTacToe {
             if(buttons[0][2].getText() == buttons[1][1].getText()
             && buttons[0][2].getText() == buttons[2][0].getText()) {
                 for(int j = 0; j < 3; j++) {
-                    buttons[j][j].setForeground(Color.green);
-                    buttons[j][j].setBackground(Color.GRAY);
+                    buttons[j][2-j].setForeground(Color.green);
+                    buttons[j][2-j].setBackground(Color.GRAY);
                     titleLabel.setText(currentPlayer + " Wins!");
                 }
                 isGameOver = true;
